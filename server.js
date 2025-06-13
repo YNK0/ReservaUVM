@@ -12,6 +12,7 @@ app.use(express.json());
 db();
 
 // Rutas
+app.use(require('./middleware/log'));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/spaces', require('./routes/spaceRoutes'));
 app.use('/api/bookings', require('./routes/bookingRoutes'));

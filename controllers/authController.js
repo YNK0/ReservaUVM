@@ -13,7 +13,7 @@ const login = async (req, res) => {
     if (!isMatch) return res.status(401).json({ error: 'Credenciales inválidas' });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.json({ token, user: { id: user._id, email: user.email, name: user.name } });
+    res.json({ token, user: { id: user._id, email: user.email, name: user.name, role: user.role } });
   } catch (error) {
     res.status(500).json({ error: 'Error en el servidor' });
   }
