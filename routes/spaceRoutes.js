@@ -7,7 +7,7 @@ const admin = require('../middleware/authAdmin');
 router.get('/', spaceController.getSpaces);
 
 // Obtener disponibilidad de un espacio por fecha
-router.get('/:spaceId/availability/:date', spaceController.getSpaceAvailability);
+router.get('/:id/availability/:date', spaceController.getSpaceAvailability);
 
 // Crear un nuevo espacio
 router.post('/', admin, spaceController.createSpace);
