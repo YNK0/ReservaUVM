@@ -22,8 +22,6 @@ app.use(cors({
   credentials: true
 }));
 
-// Manejar explícitamente OPTIONS para todos los endpoints (preflight)
-app.options('*', cors());
 // Conectar a la base de datos
 db();
 // Rutas
