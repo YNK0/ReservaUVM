@@ -1,16 +1,14 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const db = require('./config/db');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Conectar a la base de datos
 db();
-
 // Rutas
 app.use(require('./middleware/log'));
 app.use('/api/auth', require('./routes/authRoutes'));
